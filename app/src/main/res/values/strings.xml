@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">muvi</string>
+    <string name="title_home">Home</string>
+    <string name="title_genres">Genres</string>
+    <string name="title_upcoming">UpComing</string>
+    <string name="title_search">Search</string>
+    <string name="title_setting">Setting</string>
 </resources>
