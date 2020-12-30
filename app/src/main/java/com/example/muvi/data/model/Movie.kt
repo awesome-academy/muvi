@@ -58,6 +58,20 @@ data class Movie(
         listOf()
     )
 
+    constructor(movie: Movie) : this(
+        id = movie.id,
+        title = movie.title,
+        rate = movie.rate,
+        description = movie.description,
+        poster = movie.poster,
+        background = movie.background,
+        releaseDate = movie.releaseDate,
+        runtime = movie.runtime,
+        genreIds = movie.genreIds,
+        genres = movie.genres,
+        productionCompanies = movie.productionCompanies
+    )
+
     override fun areItemsTheSame(newItem: GeneralEntity): Boolean =
         newItem is Movie && this.id == newItem.id
 

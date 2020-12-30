@@ -17,9 +17,23 @@ data class Search(
     val profile: String? = null
 ) : GeneralEntity {
 
+    constructor(search: Search) : this(
+        id = search.id,
+        mediaType = search.mediaType,
+        title = search.title,
+        poster = search.poster,
+        name = search.name,
+        profile = search.profile
+    )
+
     override fun areItemsTheSame(newItem: GeneralEntity): Boolean =
         newItem is Search && this.id == newItem.id
 
     override fun areContentsTheSame(newItem: GeneralEntity): Boolean =
         newItem is Search && this == newItem
+
+    companion object {
+        const val MOVIE = "movie"
+        const val PERSON = "person"
+    }
 }
