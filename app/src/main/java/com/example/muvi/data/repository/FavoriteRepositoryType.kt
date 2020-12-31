@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Flowable
 import io.reactivex.rxjava3.core.Single
 
-class FavoriteRepositoryImpl(private val local: FavoriteDataSource.Local) :
+class FavoriteRepositoryType(private val local: FavoriteDataSource.Local) :
     FavoriteRepository {
 
     override fun getFavorite(): Flowable<List<Movie>> =

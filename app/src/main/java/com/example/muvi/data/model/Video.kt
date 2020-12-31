@@ -11,4 +11,8 @@ data class Video(
     val key: String = "",
     @SerializedName("type")
     val type: String = ""
-)
+) {
+    companion object {
+        const val TYPE_TRAILER = "Trailer"
+    }
+}
