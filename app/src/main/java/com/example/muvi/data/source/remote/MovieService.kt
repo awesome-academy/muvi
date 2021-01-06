@@ -13,16 +13,16 @@ import retrofit2.http.Query
 interface MovieService {
 
     @GET(ApiEndPoint.GET_TRENDING_MOVIE)
-    fun getTrendingMovies(): Observable<List<Movie>>
+    fun getTrendingMovies(): Observable<MovieResponse>
 
     @GET(ApiEndPoint.GET_DISCOVERY_MOVIE)
-    fun getDiscoveryMovies(@Query(PARAMS_PAGE) page: Int? = null): Observable<List<Movie>>
+    fun getDiscoveryMovies(@Query(PARAMS_PAGE) page: Int? = null): Observable<MovieResponse>
 
     @GET(ApiEndPoint.GET_TOP_RATE_MOVIE)
-    fun getTopRateMovies(@Query(PARAMS_PAGE) page: Int? = null): Observable<List<Movie>>
+    fun getTopRateMovies(@Query(PARAMS_PAGE) page: Int? = null): Observable<MovieResponse>
 
     @GET(ApiEndPoint.GET_POPULAR_MOVIE)
-    fun getPopularMovies(@Query(PARAMS_PAGE) page: Int? = null): Observable<List<Movie>>
+    fun getPopularMovies(@Query(PARAMS_PAGE) page: Int? = null): Observable<MovieResponse>
 
     @GET(ApiEndPoint.GET_RECOMMEND_MOVIE)
     fun getRecommendMovies(@Path(PARAMS_ID) movieId: Int): Observable<MovieResponse>
@@ -37,7 +37,7 @@ interface MovieService {
     fun search(@Query("query") param: String): Observable<List<Search>>
 
     @GET(ApiEndPoint.GET_MOVIE_OF_ACTOR)
-    fun getMoviesOfActor(@Path(PARAMS_ID) actorId: Int): Observable<List<Movie>>
+    fun getMoviesOfActor(@Path(PARAMS_ID) actorId: Int): Observable<MovieResponse>
 
     @GET(ApiEndPoint.GET_DISCOVERY_MOVIE)
     fun getMovieByGenre(
