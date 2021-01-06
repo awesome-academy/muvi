@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.rd.PageIndicatorView
+            android:id="@+id/pageIndicatorTrending"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_216"
+            android:layout_gravity="bottom|center_horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:piv_animationType="scale"
+            app:piv_count="3"
+            attrs:piv_padding="@dimen/dp_8"
+            attrs:piv_radius="@dimen/dp_8" />
+
+        <ImageView
+            android:id="@+id/imageLogo"
+            android:layout_width="?actionBarSize"
+            android:layout_height="?actionBarSize"
+            android:layout_marginStart="@dimen/dp_8"
+            android:contentDescription="@null"
+            android:src="@drawable/logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_list"
+            app:layout_constraintBottom_toBottomOf="@+id/imageLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageLogo" />
+
+        <TextView
+            android:id="@+id/textTitleDiscovery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/title_discovery"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pageIndicatorTrending" />
+
+        <ImageView
+            android:id="@+id/imageDiscoveryAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTitleDiscovery" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerDiscovery"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitleDiscovery"
+            tools:listitem="@layout/item_recyclerview_discovery" />
+
+        <TextView
+            android:id="@+id/textTitleTrending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/title_trending"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerDiscovery" />
+
+        <ImageView
+            android:id="@+id/imageTrendingAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTitleTrending" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTrending"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitleTrending"
+            tools:listitem="@layout/item_recyclerview_image_movie" />
+
+        <TextView
+            android:id="@+id/textTitleTopRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/title_top_rate"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerTrending" />
+
+        <ImageView
+            android:id="@+id/imageTopRateAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTitleTopRate" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTopRate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitleTopRate"
+            tools:listitem="@layout/item_recyclerview_image_movie" />
+
+        <TextView
+            android:id="@+id/textTitlePopular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/title_popular"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerTopRate" />
+
+        <ImageView
+            android:id="@+id/imagePopularAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTitlePopular" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPopular"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitlePopular"
+            tools:listitem="@layout/item_recyclerview_image_movie" />
+
+        <TextView
+            android:id="@+id/textTitleRecommend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_16"
+            android:text="@string/title_recommend"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerPopular" />
+
+        <ImageView
+            android:id="@+id/imageRecommendAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_16"
+            android:contentDescription="@null"
+            android:src="@drawable/ic_right_arrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textTitleRecommend" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerRecommend"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textTitleRecommend"
+            tools:listitem="@layout/item_recyclerview_image_movie" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
