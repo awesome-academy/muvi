@@ -1,18 +1,31 @@
 package com.example.muvi.ui.main
 
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.muvi.R
+import com.example.muvi.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private val navController by lazy { findNavController(R.id.navHostFragment) }
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setUpView()
     }
 
-    companion object {
-        fun getIntent(context: Context): Intent = Intent(context, MainActivity::class.java)
+    override fun onBackPressed() {
+        val navController = Navigation.findNavController(this, R.id.navHostFragment)
+        navController.popBackStack()
+    }
+
+    private fun setUpView() {
+        binding.navView.setupWithNavController(navController)
     }
 }

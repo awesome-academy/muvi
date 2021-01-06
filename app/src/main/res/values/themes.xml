@@ -19,4 +19,9 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowBackground">@drawable/bg_splash</item>
     </style>
+
+    <style name="cornerImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/dp_8</item>
+    </style>
 </resources>

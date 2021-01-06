@@ -26,13 +26,13 @@ data class Movie(
     var runtime: Int,
     @Ignore
     @SerializedName("genre_ids")
-    var genreIds: List<Int>,
+    var genreIds: List<Int>?,
     @Ignore
     @SerializedName("genres")
-    var genres: List<Genre>,
+    var genres: List<Genre>?,
     @Ignore
     @SerializedName("production_companies")
-    var productionCompanies: List<Company>
+    var productionCompanies: List<Company>?
 ) : GeneralEntity {
 
     constructor(
