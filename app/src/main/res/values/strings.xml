@@ -16,4 +16,5 @@
 
     <string name="text_information">Info</string>
     <string name="text_my_list">My List</string>
+    <string name="text_search_input">Search for movie, genres, people</string>
 </resources>
