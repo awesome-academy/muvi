@@ -6,6 +6,11 @@
     <string name="title_search">Search</string>
     <string name="title_setting">Setting</string>
     <string name="title_all_genres">All genres</string>
+    <string name="title_discovery">Discovery</string>
+    <string name="title_trending">Trending</string>
+    <string name="title_top_rate">Top Rate</string>
+    <string name="title_popular">Popular</string>
+    <string name="title_recommend">Recommend</string>
 
     <string name="default_error">Error…!</string>
 </resources>
