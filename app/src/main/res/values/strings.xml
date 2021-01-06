@@ -17,4 +17,6 @@
     <string name="text_information">Info</string>
     <string name="text_my_list">My List</string>
     <string name="text_search_input">Search for movie, genres, people</string>
+    <string name="text_play_trailer">Play Trailer</string>
+    <string name="text_more_like_this">MORE LIKE THIS</string>
 </resources>
