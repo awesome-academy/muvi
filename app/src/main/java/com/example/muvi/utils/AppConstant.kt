@@ -1,14 +1,18 @@
 package com.example.muvi.utils
 
 object ApiConfig {
-    private const val BASE_URL_IMAGE = "https://image.tmdb.org/t/p/original"
+
+    private const val BASE_URL_IMAGE = "https://image.tmdb.org/t/p/w500"
     const val BASE_URL = "https://api.themoviedb.org/3/"
     const val API_KEY = "api_key"
+
+    fun getUrlImage(url: String?) = BASE_URL_IMAGE + url
 }
 
 object ApiEndPoint {
     const val PARAMS_ID = "id"
     const val PARAMS_PAGE = "page"
+    const val PARAMS_GENRE_ID = "with_genres"
     const val GET_TRENDING_MOVIE = "trending/movie/day"
     const val GET_DISCOVERY_MOVIE = "discover/movie?sort_by=popularity.desc"
     const val GET_TOP_RATE_MOVIE = "movie/top_rated"

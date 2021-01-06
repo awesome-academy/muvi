@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.muvi">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MainApp"
         android:allowBackup="true"
@@ -12,13 +14,14 @@
         android:theme="@style/Theme.Muvi">
         <activity
             android:name=".ui.splash.SplashActivity"
-            android:theme="@style/SplashTheme">
+            android:theme="@style/SplashTheme" />
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:theme="@style/Theme.Muvi">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.MainActivity" />
     </application>
 </manifest>

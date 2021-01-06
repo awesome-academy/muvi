@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/genresFragment">
+
+    <fragment
+        android:id="@+id/genresFragment"
+        android:name="com.example.muvi.ui.genres.GenresFragment"
+        android:label="GenresFragment"
+        tools:layout="@layout/fragment_genre">
+        <action
+            android:id="@+id/action_genresFragment_to_movieTypeFragment"
+            app:destination="@id/movieTypeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/movieTypeFragment"
+        android:name="com.example.muvi.ui.genres.MovieTypeFragment"
+        android:label="MovieTypeFragment"
+        tools:layout="@layout/fragment_movie_type">
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+</navigation>
