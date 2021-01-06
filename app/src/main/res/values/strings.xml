@@ -13,4 +13,7 @@
     <string name="title_recommend">Recommend</string>
 
     <string name="default_error">Error…!</string>
+
+    <string name="text_information">Info</string>
+    <string name="text_my_list">My List</string>
 </resources>
