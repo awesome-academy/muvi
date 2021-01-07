@@ -22,4 +22,5 @@ object ApiEndPoint {
     const val SEARCH_MULTI = "search/multi"
     const val GET_MOVIE_OF_ACTOR = "person/{id}/movie_credits"
     const val GET_ACTOR_OF_MOVIE = "movie/{id}/credits"
+    const val GET_DETAIL_MOVIE = "movie/{id}"
 }

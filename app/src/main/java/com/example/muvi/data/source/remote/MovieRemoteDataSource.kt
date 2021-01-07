@@ -17,13 +17,13 @@ class MovieRemoteDataSource(private val movieService: MovieService) : MovieDataS
     override fun getPopularMovies(page: Int?): Observable<List<Movie>> =
         movieService.getPopularMovies(page)
 
-    override fun getRecommendMovies(movieId: Int): Observable<List<Movie>> =
+    override fun getRecommendMovies(movieId: Int): Observable<MovieResponse> =
         movieService.getRecommendMovies(movieId)
 
-    override fun getActors(movieId: Int): Observable<List<Actor>> =
+    override fun getActors(movieId: Int): Observable<DetailMovie> =
         movieService.getActors(movieId)
 
-    override fun getVideo(movieId: Int): Observable<List<Video>> =
+    override fun getVideo(movieId: Int): Observable<DetailMovie> =
         movieService.getVideo(movieId)
 
     override fun search(param: String): Observable<List<Search>> =
@@ -35,4 +35,7 @@ class MovieRemoteDataSource(private val movieService: MovieService) : MovieDataS
     override fun getMovieByGenre(genreId: Int, page: Int?): Observable<MovieResponse> {
         return movieService.getMovieByGenre(genreId, page)
     }
+
+    override fun getDetailMovie(movieId: Int): Observable<Movie> =
+        movieService.getDetailMovie(movieId)
 }

@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Muvi" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/color_electric_violet</item>
-        <item name="colorPrimaryVariant">@color/color_purple</item>
+        <item name="colorPrimary">@color/color_black</item>
+        <item name="colorPrimaryVariant">@color/color_black</item>
         <item name="colorOnPrimary">@color/color_white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/color_robin_egg_blue</item>

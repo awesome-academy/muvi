@@ -40,5 +40,8 @@ class MovieTypeFragment : BaseFragment<FragmentMovieTypeBinding>() {
         }
     }
 
-    private fun onItemClick(movie: Movie) {}
+    private fun onItemClick(movie: Movie) {
+        val action = MovieTypeFragmentDirections.actionMovieTypeFragmentToTrailerFragment(movie.id)
+        findNavController().navigate(action)
+    }
 }

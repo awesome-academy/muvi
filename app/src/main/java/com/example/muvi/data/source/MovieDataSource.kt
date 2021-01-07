@@ -14,16 +14,18 @@ interface MovieDataSource {
 
         fun getPopularMovies(page: Int? = null): Observable<List<Movie>>
 
-        fun getRecommendMovies(movieId: Int): Observable<List<Movie>>
+        fun getRecommendMovies(movieId: Int): Observable<MovieResponse>
 
-        fun getActors(movieId: Int): Observable<List<Actor>>
+        fun getActors(movieId: Int): Observable<DetailMovie>
 
-        fun getVideo(movieId: Int): Observable<List<Video>>
+        fun getVideo(movieId: Int): Observable<DetailMovie>
 
         fun search(param: String): Observable<List<Search>>
 
         fun getMoviesOfActor(actorId: Int): Observable<List<Movie>>
 
         fun getMovieByGenre(genreId: Int, page: Int? = null): Observable<MovieResponse>
+
+        fun getDetailMovie(movieId: Int): Observable<Movie>
     }
 }

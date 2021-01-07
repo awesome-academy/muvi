@@ -23,5 +23,18 @@
         <argument
             android:name="title"
             app:argType="string" />
+        <action
+            android:id="@+id/action_movieTypeFragment_to_trailerFragment"
+            app:destination="@id/trailerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/trailerFragment"
+        android:name="com.example.muvi.ui.trailer.TrailerFragment"
+        android:label="TrailerFragment"
+        tools:layout="@layout/fragment_trailer_movie">
+        <argument
+            android:name="idMovie"
+            app:argType="integer" />
     </fragment>
 </navigation>
