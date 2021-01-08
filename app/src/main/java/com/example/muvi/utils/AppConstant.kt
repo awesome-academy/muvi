@@ -14,7 +14,8 @@ object ApiEndPoint {
     const val PARAMS_PAGE = "page"
     const val PARAMS_GENRE_ID = "with_genres"
     const val GET_TRENDING_MOVIE = "trending/movie/day"
-    const val GET_DISCOVERY_MOVIE = "discover/movie?sort_by=popularity.desc"
+    const val GET_DISCOVERY_MOVIE =
+        "discover/movie?sort_by=popularity.desc&year=2020&vote_average.gte=9&vote_average.lte=10"
     const val GET_TOP_RATE_MOVIE = "movie/top_rated"
     const val GET_POPULAR_MOVIE = "movie/popular"
     const val GET_RECOMMEND_MOVIE = "movie/{id}/recommendations"

@@ -6,15 +6,15 @@ import io.reactivex.rxjava3.core.Observable
 
 class MovieRemoteDataSource(private val movieService: MovieService) : MovieDataSource.Remote {
 
-    override fun getTrendingMovies(): Observable<List<Movie>> = movieService.getTrendingMovies()
+    override fun getTrendingMovies(): Observable<MovieResponse> = movieService.getTrendingMovies()
 
-    override fun getDiscoveryMovies(page: Int?): Observable<List<Movie>> =
+    override fun getDiscoveryMovies(page: Int?): Observable<MovieResponse> =
         movieService.getDiscoveryMovies(page)
 
-    override fun getTopRateMovies(page: Int?): Observable<List<Movie>> =
+    override fun getTopRateMovies(page: Int?): Observable<MovieResponse> =
         movieService.getTopRateMovies(page)
 
-    override fun getPopularMovies(page: Int?): Observable<List<Movie>> =
+    override fun getPopularMovies(page: Int?): Observable<MovieResponse> =
         movieService.getPopularMovies(page)
 
     override fun getRecommendMovies(movieId: Int): Observable<MovieResponse> =
@@ -29,7 +29,7 @@ class MovieRemoteDataSource(private val movieService: MovieService) : MovieDataS
     override fun search(param: String): Observable<List<Search>> =
         movieService.search(param)
 
-    override fun getMoviesOfActor(actorId: Int): Observable<List<Movie>> =
+    override fun getMoviesOfActor(actorId: Int): Observable<MovieResponse> =
         movieService.getMoviesOfActor(actorId)
 
     override fun getMovieByGenre(genreId: Int, page: Int?): Observable<MovieResponse> {

@@ -15,7 +15,7 @@ class MovieRepositoryType(
             MovieType.Popular -> remote.getPopularMovies(page)
             MovieType.Discovery -> remote.getDiscoveryMovies(page)
             MovieType.Trending -> remote.getTrendingMovies()
-        }.map { getMovies(it) }
+        }.map { getMoviesType(it) }
 
     override fun getRecommendMovies(movieId: Int): Observable<List<Movie>> =
         remote.getRecommendMovies(movieId).map {
@@ -43,7 +43,7 @@ class MovieRepositoryType(
 
     override fun getMoviesOfActor(actorId: Int): Observable<List<Movie>> =
         remote.getMoviesOfActor(actorId).map {
-            getMovies(it)
+            getMoviesType(it)
         }
 
     override fun getMoviesByGenre(genreId: Int, page: Int?): Observable<List<Movie>> {
@@ -65,18 +65,8 @@ class MovieRepositoryType(
             Movie(it)
         }
 
-    private fun getMovies(movies: List<Movie>): List<Movie> =
-        movies.mapNotNull {
-            try {
-                Movie(it)
-            } catch (exception: IllegalArgumentException) {
-                null
-            }
-        }
-
     private fun getTrailer(detailMovie: DetailMovie): Video =
         detailMovie.video?.first {
             it.type == Video.TYPE_TRAILER
         } ?: Video()
-
 }

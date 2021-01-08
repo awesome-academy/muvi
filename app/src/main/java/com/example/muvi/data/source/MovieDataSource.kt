@@ -6,13 +6,13 @@ import io.reactivex.rxjava3.core.Observable
 interface MovieDataSource {
     interface Remote {
 
-        fun getTrendingMovies(): Observable<List<Movie>>
+        fun getTrendingMovies(): Observable<MovieResponse>
 
-        fun getDiscoveryMovies(page: Int? = null): Observable<List<Movie>>
+        fun getDiscoveryMovies(page: Int? = null): Observable<MovieResponse>
 
-        fun getTopRateMovies(page: Int? = null): Observable<List<Movie>>
+        fun getTopRateMovies(page: Int? = null): Observable<MovieResponse>
 
-        fun getPopularMovies(page: Int? = null): Observable<List<Movie>>
+        fun getPopularMovies(page: Int? = null): Observable<MovieResponse>
 
         fun getRecommendMovies(movieId: Int): Observable<MovieResponse>
 
@@ -22,7 +22,7 @@ interface MovieDataSource {
 
         fun search(param: String): Observable<List<Search>>
 
-        fun getMoviesOfActor(actorId: Int): Observable<List<Movie>>
+        fun getMoviesOfActor(actorId: Int): Observable<MovieResponse>
 
         fun getMovieByGenre(genreId: Int, page: Int? = null): Observable<MovieResponse>
 
