@@ -25,13 +25,13 @@ interface MovieService {
     fun getPopularMovies(@Query(PARAMS_PAGE) page: Int? = null): Observable<List<Movie>>
 
     @GET(ApiEndPoint.GET_RECOMMEND_MOVIE)
-    fun getRecommendMovies(@Path(PARAMS_ID) movieId: Int): Observable<List<Movie>>
+    fun getRecommendMovies(@Path(PARAMS_ID) movieId: Int): Observable<MovieResponse>
 
     @GET(ApiEndPoint.GET_ACTOR_OF_MOVIE)
-    fun getActors(@Path(PARAMS_ID) movieId: Int): Observable<List<Actor>>
+    fun getActors(@Path(PARAMS_ID) movieId: Int): Observable<DetailMovie>
 
     @GET(ApiEndPoint.GET_VIDEO)
-    fun getVideo(@Path(PARAMS_ID) movieId: Int): Observable<List<Video>>
+    fun getVideo(@Path(PARAMS_ID) movieId: Int): Observable<DetailMovie>
 
     @GET(ApiEndPoint.SEARCH_MULTI)
     fun search(@Query("query") param: String): Observable<List<Search>>
@@ -44,4 +44,7 @@ interface MovieService {
         @Query(PARAMS_GENRE_ID) genreId: Int,
         @Query(PARAMS_PAGE) page: Int? = null
     ): Observable<MovieResponse>
+
+    @GET(ApiEndPoint.GET_DETAIL_MOVIE)
+    fun getDetailMovie(@Path(PARAMS_ID) movieId: Int): Observable<Movie>
 }

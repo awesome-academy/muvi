@@ -19,14 +19,14 @@ class MovieRepositoryType(
 
     override fun getRecommendMovies(movieId: Int): Observable<List<Movie>> =
         remote.getRecommendMovies(movieId).map {
-            getMovies(it).filter { movie ->
+            getMoviesType(it).filter { movie ->
                 !movie.poster.isNullOrEmpty()
             }
         }
 
     override fun getActors(movieId: Int): Observable<List<Actor>> =
         remote.getActors(movieId).map {
-            it.filter { actor ->
+            it.cast?.filter { actor ->
                 !actor.avatar.isNullOrEmpty()
             }
         }
@@ -57,8 +57,11 @@ class MovieRepositoryType(
     override fun getGenres(): Observable<List<Genre>> =
         Observable.just(GenreUtil.genres)
 
+    override fun getDetailMovie(movieId: Int): Observable<Movie> =
+        remote.getDetailMovie(movieId)
+
     private fun getMoviesType(moviesResponse: MovieResponse): List<Movie> =
-        moviesResponse.movies.mapNotNull {
+        moviesResponse.movies.map {
             Movie(it)
         }
 
@@ -71,8 +74,9 @@ class MovieRepositoryType(
             }
         }
 
-    private fun getTrailer(videos: List<Video?>): Video =
-        videos.first {
-            it?.type == Video.TYPE_TRAILER
+    private fun getTrailer(detailMovie: DetailMovie): Video =
+        detailMovie.video?.first {
+            it.type == Video.TYPE_TRAILER
         } ?: Video()
+
 }

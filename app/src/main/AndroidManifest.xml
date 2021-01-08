@@ -17,6 +17,8 @@
             android:theme="@style/SplashTheme" />
         <activity
             android:name=".ui.main.MainActivity"
+            android:windowSoftInputMode="adjustPan"
+            android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:theme="@style/Theme.Muvi">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,5 +1,6 @@
 package com.example.muvi.base
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,6 +26,13 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
 
     protected abstract fun initData()
 
+    private var bottomNavigationListener: BottomNavigationListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        if (context is BottomNavigationListener) bottomNavigationListener = context
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -40,6 +48,15 @@ abstract class BaseFragment<T : ViewDataBinding> : Fragment() {
             view.context.showToast(getString(R.string.default_error))
         })
         initData()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+    open fun onBackPress() {
+        bottomNavigationListener?.showNav()
     }
 
     companion object {
